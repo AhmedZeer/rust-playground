@@ -10,3 +10,4 @@ It is heavily inspired by the book [Programming Rust, 2nd Edition](https://learn
 * Macro declarations. (`whatever!()`)
 * Return values with no keyword. (`n`)
 * Machine specific word size. (`isize`, `usize`)
+* Function attribute & Unit testing. (`#[test]`)
