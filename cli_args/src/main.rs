@@ -49,7 +49,4 @@ fn main() {
     for borrower in &numbers[1..] {
         d = gcd(d, *borrower);
     }
-
-fn main() {
-    println!("Hello, world!");
 }
