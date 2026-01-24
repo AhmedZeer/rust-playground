@@ -26,3 +26,11 @@ fn main() {
     let result: u64 = gcd(15, 5);
     println!("{result}");
 }
+
+// An example attribute for unit testing.
+// Can be run easily using `cargo test`
+#[test]
+fn test_gcd(){
+    assert_eq!(gcd(15, 5), 5);
+    assert_eq!(gcd(14, 15), 1);
+}
