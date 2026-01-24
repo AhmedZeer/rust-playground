@@ -18,3 +18,10 @@ It is heavily inspired by the book [Programming Rust, 2nd Edition](https://learn
 * Rust's `Result` handling style.
 * The logic of *Borrowing* and *Derefrencing*.
 * Brief intro to `Trait`.
+
+### Actix GCD
+* Rust `closures` and how they relate to functions.
+* Using online crates with cargo.
+* Hosting an HTTP server with Actix.
+* Deserializing POST form parameters and call a fn.
+* `format!()` macro to manipulate strings.
