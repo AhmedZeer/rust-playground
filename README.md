@@ -17,4 +17,4 @@ It is heavily inspired by the book [Programming Rust, 2nd Edition](https://learn
 * Passing arguments and parsing them.
 * Rust's `Result` handling style.
 * The logic of *Borrowing* and *Derefrencing*.
-* Bried intro to `Trait`.
+* Brief intro to `Trait`.

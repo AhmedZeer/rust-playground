@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Trait !
 // Traits must be included to be 
 // uesd from implemented methods.
@@ -49,4 +50,8 @@ fn main() {
     for borrower in &numbers[1..] {
         d = gcd(d, *borrower);
     }
+=======
+fn main() {
+    println!("Hello, world!");
+>>>>>>> 70db1f3d41e72401420e736771148207db7b64c1
 }
