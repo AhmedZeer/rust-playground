@@ -6,7 +6,7 @@ It is heavily inspired by the book [Programming Rust, 2nd Edition](https://learn
 ## What I learned in each package
 
 ### Mandlebrot
-![output](./mandelbort/mandle.png) 
+<img src="./mandelbort/mandle.png" width="75%" />
 * `loop` statement for infinite loop.
 * `?` syntax for cleaner `Result, Err` checking.
 * `image` crate for PNGEncoding.
