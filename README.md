@@ -18,6 +18,15 @@ It is heavily inspired by the book [Programming Rust, 2nd Edition](https://learn
 * SAFE concurrent multithreaded programming using `crossbeam::scope`.
 * `move` keyword for closures.
 
+### Quickreplace
+* Creating a CLI program.
+* Basic I/O and data processing.
+* Handling corrupt arguments.
+* `#[derive(Debug)]` attribute for straightforward debug printing.
+* Using `regex` as a crate to manipulate strings.
+* Colorizing stdout by `text-colorizer` crate.
+
+
 ### CLI Args
 * Using standard library.
 * Passing arguments and parsing them.
