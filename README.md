@@ -7,6 +7,7 @@ It is heavily inspired by the book [Programming Rust, 2nd Edition](https://learn
 
 ### Mandlebrot
 <img src="./mandelbort/mandle.png" width="75%" />
+
 * `loop` statement for infinite loop.
 * `?` syntax for cleaner `Result, Err` checking.
 * `image` crate for PNGEncoding.
