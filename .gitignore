@@ -1,2 +1,5 @@
 # Vim garbage
 *.swp*
+
+# build
+/target

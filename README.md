@@ -4,13 +4,16 @@ It is heavily inspired by the book [Programming Rust, 2nd Edition](https://learn
 
 ----------
 ## What I learned in each package
-### Hello
-* Variable declarations. (`let t`, `let t: u64`)
-* Function call and mutable syntax. (`fn foo(mut a: u32)`)
-* Macro declarations. (`whatever!()`)
-* Return values with no keyword. (`n`)
-* Machine specific word size. (`isize`, `usize`)
-* Function attribute & Unit testing. (`#[test]`)
+
+### Mandlebrot
+![output](./mandelbort/mandle.png) 
+* `loop` statement for infinite loop.
+* `?` syntax for cleaner `Result, Err` checking.
+* `image` crate for PNGEncoding.
+* `match` statement for tuple based decision making.
+* Variable name based direct attribute binding.
+* `Optional` return statements to either return `Some` or `None`.
+* `vec![num, size]` macro initialize a collection with initial value.
 
 ### CLI Args
 * Using standard library.
@@ -25,3 +28,12 @@ It is heavily inspired by the book [Programming Rust, 2nd Edition](https://learn
 * Hosting an HTTP server with Actix.
 * Deserializing POST form parameters and call a fn.
 * `format!()` macro to manipulate strings.
+
+### Hello
+* Variable declarations. (`let t`, `let t: u64`)
+* Function call and mutable syntax. (`fn foo(mut a: u32)`)
+* Macro declarations. (`whatever!()`)
+* Return values with no keyword. (`n`)
+* Machine specific word size. (`isize`, `usize`)
+* Function attribute & Unit testing. (`#[test]`)
+
