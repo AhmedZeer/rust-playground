@@ -1,3 +1,4 @@
+use crossbeam::scope;
 use image::ExtendedColorType;
 use image::ImageEncoder;
 use image::codecs::png::PngEncoder;
@@ -27,9 +28,55 @@ fn main() {
 
     let (width, height) = parse_pair::<usize>(&args[2], 'x').expect("Cant parse image size.");
     let upperleft = parse_complex(&args[3]).expect("Cant parse upperleft.");
-    let upperright = parse_complex(&args[4]).expect("Cant parse upperright.");
+    let lowerright = parse_complex(&args[4]).expect("Cant parse upperright.");
     let mut buf = vec![0; width * height];
-    render(&mut buf, (width, height), (upperleft, upperright));
+
+    let threads = 8;
+    let rows_per_band = height / threads + 1; // Columns processed by each thread.
+
+    // To borrow from the buffer for writing and later
+    // for reading we need to define a scope for threads
+    // to operate on. Once this scope ends, the bands
+    // are automatically released.
+    {
+        // Borrow mutable instances of `buf` to write
+        // results. It will be freed after the scope.
+        let bands: Vec<&mut [u8]> = buf.chunks_mut(rows_per_band * width).collect();
+
+        // We initialize each thread inside this scope.
+        // It ensures joining all the threads. If any
+        // thread fails, the whole scope return an error.
+        scope(|spawner| {
+            // No threads until now.
+            for (i, band) in bands.into_iter().enumerate() {
+                // Current tile's starting index.
+                let start = i * rows_per_band;
+                // Each tile's height.
+                let band_height = band.len() / width;
+                let band_upperleft =
+                    pixel_to_point((width, height), (upperleft, lowerright), (0, start));
+                let band_lowerright = pixel_to_point(
+                    (width, height),
+                    (upperleft, lowerright),
+                    (width, band_height + start),
+                );
+                // Spawn the thread with `move` keyword to
+                // basically move the ownership of each object
+                // inside the closure to the closure itself, i.e band.
+                spawner.spawn(move |_| {
+                    render(
+                        band,
+                        (width, band_height),
+                        (band_upperleft, band_lowerright),
+                    );
+                });
+            }
+        })
+        .unwrap()
+    }
+
+    // Single Threaded Approach.
+    // render(&mut buf, (width, height), (upperleft, upperright));
     write_image(&mut buf, &args[1], (width, height)).expect("Couldnt write the image.");
 }
 

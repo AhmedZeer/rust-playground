@@ -15,6 +15,8 @@ It is heavily inspired by the book [Programming Rust, 2nd Edition](https://learn
 * Variable name based direct attribute binding.
 * `Optional` return statements to either return `Some` or `None`.
 * `vec![num, size]` macro initialize a collection with initial value.
+* SAFE concurrent multithreaded programming using `crossbeam::scope`.
+* `move` keyword for closures.
 
 ### CLI Args
 * Using standard library.
