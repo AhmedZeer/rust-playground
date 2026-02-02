@@ -1,7 +1,7 @@
 use actix_web::{App, HttpResponse, HttpServer, web};
 use serde::Deserialize;
 
-// In actix fromework the main must be async.
+// In actix framework the main must be async.
 // Also, all other routes must be async.
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {

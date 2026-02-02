@@ -1,6 +1,6 @@
 // u64, i64 -> Unsigned & Signed 64 bit integers.
 // isize, usize -> Machine's word length (i.e 32-bit, 64-bit etc)
-// 'mut' allows the fn body to modify the parameter.
+// 'mut' allows the fn body to modify the parameter. (mutable)
 fn gcd(mut n: u64, mut m: u64) -> u64 {
     // '!' indicates macro usage, not a fn.
     // When true, the program 'panic'.

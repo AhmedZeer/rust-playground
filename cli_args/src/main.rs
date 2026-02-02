@@ -19,7 +19,7 @@ fn gcd(mut n: u64, mut m: u64) -> u64 {
 }
 
 // No need to return from main.
-// If main returns anything the prgoram
+// If main returns anything the program
 // ran successfully.
 fn main() {
 
@@ -31,7 +31,7 @@ fn main() {
     // `Result` object, which is either
     // Ok(val) or Err(e).
     // Rust does not have exceptions!
-    // Either panic or Result.
+    // Either panic or Result. :)
     for arg in env::args().skip(1){
         numbers.push(u64::from_str(&arg)
             .expect("Oopsie"));
