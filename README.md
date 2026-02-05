@@ -34,3 +34,16 @@ This repository contains a couple of Rust packages that I have created for learn
 * `rand` library
 * Basic loop and conditions syntax
 * and other cool stuffs
+
+### Multi-thread Mandelbrot
+* Intro Multi-thread
+* Argument Parsing
+* Intro File I/O
+
+| Thread Count | Time |
+| ----------- | ----------- |
+| 1 | 2.6131263 second |
+| 2 | 2.5131268 second |
+| 4 | 1.4767705 second |
+| 8 | 897.587 milisecond |
+| 12 | 722.077 milisecond |
